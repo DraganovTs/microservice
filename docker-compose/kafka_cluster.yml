@@ -3,7 +3,6 @@ services:
   zookeeper:
     image: confluentinc/cp-zookeeper:${KAFKA_VERSION:-latest}
     hostname: zookeeper
-    restart: on-failure
     ports:
       - "2181:2181"
     environment:
@@ -14,29 +13,27 @@ services:
       ZOOKEEPER_SYNC_LIMIT: 2
       ZOOKEEPER_SERVERS: zookeeper:2888:3888
     networks:
-      - ${GLOBAL_NETWORK:-services}
+      - ${GLOBAL_NETWORK:-kafka}
   schema-registry:
     image: confluentinc/cp-schema-registry:${KAFKA_VERSION}
     hostname: schema-registry
-    restart: on-failure
     depends_on:
       - zookeeper
       - kafka-broker-1
       - kafka-broker-2
       - kafka-broker-3
     ports:
-      - "8082:8081"
+      - "8081:8081"
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: 'zookeeper:2181'
       SCHEMA_REGISTRY_LISTENERS: http://schema-registry:8081
       SCHEMA_REGISTRY_DEBUG: 'true'
     networks:
-      - ${GLOBAL_NETWORK:-services}
+      - ${GLOBAL_NETWORK:-kafka}
   kafka-broker-1:
     image: confluentinc/cp-kafka:${KAFKA_VERSION}
     hostname: kafka-broker-1
-    restart: on-failure
     ports:
       - "19092:19092"
     depends_on:
@@ -44,18 +41,15 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      # Internal communication to this broker on kafka-broker-1:9092, it is accesible from external nodes on localhost:19092
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker-1:9092,LISTENER_LOCAL://localhost:19092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,LISTENER_LOCAL:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
-      # end to end compression from producer to consumer
       KAFKA_COMPRESSION_TYPE: producer
     networks:
-      - ${GLOBAL_NETWORK:-services}
+      - ${GLOBAL_NETWORK:-kafka}
   kafka-broker-2:
     image: confluentinc/cp-kafka:${KAFKA_VERSION}
     hostname: kafka-broker-2
-    restart: on-failure
     ports:
       - "29092:29092"
     depends_on:
@@ -68,11 +62,10 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_COMPRESSION_TYPE: producer
     networks:
-      - ${GLOBAL_NETWORK:-services}
+      - ${GLOBAL_NETWORK:-kafka}
   kafka-broker-3:
     image: confluentinc/cp-kafka:${KAFKA_VERSION}
     hostname: kafka-broker-3
-    restart: on-failure
     ports:
       - "39092:39092"
     depends_on:
@@ -85,4 +78,4 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_COMPRESSION_TYPE: producer
     networks:
-      - ${GLOBAL_NETWORK:-services}
+      - ${GLOBAL_NETWORK:-kafka}
