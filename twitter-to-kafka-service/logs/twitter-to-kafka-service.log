@@ -2870,3 +2870,110 @@ Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intV
 2023-06-16 16:01:11 [main] INFO  c.m.s.impl.TwitterKafkaProducer - Sending message='{"userId": 3851432280277809573, "id": 5654583757831659275, "text": "libero Lorem Maecenas dolor ultricies magna Java magna amet ipsum ultricies", "createdAt": 1686920471000}' to topic='twitter-topic'
 2023-06-16 16:01:12 [main] INFO  c.m.l.TwitterKafkaStatusListener - Received status text posuere magna posuere Java sit porttitor sending to kafka topic twitter-topic
 2023-06-16 16:01:12 [main] INFO  c.m.s.impl.TwitterKafkaProducer - Sending message='{"userId": 2238287686196586388, "id": 6568406619373715556, "text": "posuere magna posuere Java sit porttitor", "createdAt": 1686920472000}' to topic='twitter-topic'
+2023-06-16 19:27:45 [main] INFO  c.m.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 21540 (D:\Projects\Port\Java\microservices\twitter-to-kafka-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-16 19:27:45 [main] INFO  c.m.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2023-06-16 19:27:45 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-06-16 19:27:45 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=twitter-to-kafka-service,config-client, profiles=[twitter_to_kafka], label=null, version=1eaf84ad49e9e301dfdfd1ff87af336e8340d0ec, state=null
+2023-06-16 19:27:45 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=52ba5dd9-49fe-321e-8e94-e8d44b5572ba
+2023-06-16 19:27:46 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-16 19:27:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.1
+2023-06-16 19:27:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 97671528ba54a138
+2023-06-16 19:27:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1686932866353
+2023-06-16 19:27:47 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8181
+2023-06-16 19:27:47 [main] INFO  c.m.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.891 seconds (JVM running for 3.384)
+2023-06-16 19:27:47 [main] INFO  c.m.TwitterToKafkaServiceApplication - App working fine so far
+2023-06-16 19:27:47 [main] INFO  c.m.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2023-06-16 19:27:47 [main] INFO  c.m.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2023-06-16 19:27:47 [main] INFO  c.m.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2023-06-16 19:28:01 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-16 19:28:01 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
+Caused by: com.microservices.exeption.KafkaClientException: Reached max number of retry for reading kafka topic(s)!
+	at com.microservices.client.KafkaAdminClient.checkMaxRetry(KafkaAdminClient.java:147)
+	at com.microservices.client.KafkaAdminClient.checkSchemaRegistry(KafkaAdminClient.java:115)
+	at com.microservices.init.impl.KafkaStreamInitializer.init(KafkaStreamInitializer.java:27)
+	at com.microservices.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:36)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 5 common frames omitted
+2023-06-16 19:28:01 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2023-06-16 19:28:01 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-06-16 19:28:01 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-06-16 19:28:01 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-06-16 19:28:01 [main] INFO  c.m.s.impl.TwitterKafkaProducer - Closing kafka producer!

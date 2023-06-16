@@ -1115,3 +1115,44 @@ Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/Dragan
 2023-06-16 16:00:59 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
 2023-06-16 16:00:59 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\zabra\AppData\Local\Temp\config-repo-2062549413499615131\config-server-repository\config-client-twitter_to_kafka.yml]' via location 'file:/C:/Users/zabra/AppData/Local/Temp/config-repo-2062549413499615131/config-server-repository/'
 2023-06-16 16:00:59 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\zabra\AppData\Local\Temp\config-repo-2062549413499615131\config-server-repository\config-client.yml]' via location 'file:/C:/Users/zabra/AppData/Local/Temp/config-repo-2062549413499615131/config-server-repository/'
+2023-06-16 19:13:55 [Thread-3] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\zabra\AppData\Local\Temp\config-repo-2062549413499615131\.git\objects\pack\pack-15e5c70ca8fd74ddbbc1ae992b691bdd07e546a6.idx
+2023-06-16 19:27:48 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.4.Final
+2023-06-16 19:27:48 [main] INFO  com.microservices.ConfigServer - Starting ConfigServer using Java 19.0.1 on DESKTOP-RP5QVIC with PID 5660 (D:\Projects\Port\Java\microservices\config-server\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-16 19:27:48 [main] INFO  com.microservices.ConfigServer - No active profile set, falling back to 1 default profile: "default"
+2023-06-16 19:27:48 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=61086891-4da0-3f8d-92d8-2c19c67ecb36
+2023-06-16 19:27:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2023-06-16 19:27:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2023-06-16 19:27:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-16 19:27:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-06-16 19:27:48 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-16 19:27:48 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 722 ms
+2023-06-16 19:27:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7f0f84d4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6df4af5, org.springframework.security.web.context.SecurityContextPersistenceFilter@217dc48e, org.springframework.security.web.header.HeaderWriterFilter@7d2c9361, org.springframework.security.web.csrf.CsrfFilter@696b52bc, org.springframework.security.web.authentication.logout.LogoutFilter@5d9618f2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a14e60d, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4ae2e781, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@26e8ff8c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@38e83838, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@296edc75, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@357c9bd9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5aa76ad2, org.springframework.security.web.session.SessionManagementFilter@fbe70d8, org.springframework.security.web.access.ExceptionTranslationFilter@450f0235, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2bebd114]
+2023-06-16 19:27:49 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/actuator/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-16 19:27:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/actuator/**']
+2023-06-16 19:27:49 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/encrypt/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-16 19:27:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/encrypt/**']
+2023-06-16 19:27:49 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/decrypt/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-16 19:27:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/decrypt/**']
+2023-06-16 19:27:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2023-06-16 19:27:50 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8888 is already in use
+2023-06-16 19:27:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8888"]
+2023-06-16 19:27:50 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-06-16 19:27:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8888"]
+2023-06-16 19:27:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8888"]
+2023-06-16 19:27:50 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-16 19:27:50 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8888 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8888 or configure this application to listen on another port.
+
