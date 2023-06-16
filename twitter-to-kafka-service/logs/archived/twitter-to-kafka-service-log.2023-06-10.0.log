@@ -1,0 +1,16 @@
+2023-06-10 12:16:14 [main] INFO  c.m.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 2936 (D:\Projects\Port\Java\microservices\twitter-to-kafka-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-10 12:16:14 [main] INFO  c.m.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2023-06-10 12:16:14 [main] INFO  c.m.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.557 seconds (JVM running for 0.915)
+2023-06-10 12:16:14 [main] INFO  c.m.TwitterToKafkaServiceApplication - App working fine so far
+2023-06-10 12:16:14 [main] INFO  c.m.TwitterToKafkaServiceApplication - [-Java -Microservices -Spring -Kafka -Elasticsearch]
+2023-06-10 12:16:14 [main] INFO  c.m.r.impl.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [-Java -Microservices -Spring -Kafka -Elasticsearch]
+2023-06-10 12:16:14 [main] INFO  c.m.l.TwitterKafkaStatusListener - Twitter status with text massa Lorem ultricies -Java -Microservices -Spring -Kafka -Elasticsearch consectetuer porttitor
+2023-06-10 12:16:24 [main] INFO  c.m.l.TwitterKafkaStatusListener - Twitter status with text Fusce amet Lorem consectetuer Fusce sed -Java -Microservices -Spring -Kafka -Elasticsearch sed sit amet malesuada lectus
+2023-06-10 12:24:39 [main] INFO  c.m.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 6016 (D:\Projects\Port\Java\microservices\twitter-to-kafka-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-10 12:24:40 [main] INFO  c.m.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2023-06-10 12:24:40 [main] INFO  c.m.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.682 seconds (JVM running for 1.18)
+2023-06-10 12:24:40 [main] INFO  c.m.TwitterToKafkaServiceApplication - App working fine so far
+2023-06-10 12:24:40 [main] INFO  c.m.TwitterToKafkaServiceApplication - [-Java -Microservices -Spring -Kafka -Elasticsearch]
+2023-06-10 12:24:40 [main] INFO  c.m.r.impl.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [-Java -Microservices -Spring -Kafka -Elasticsearch]
+2023-06-10 12:24:40 [main] INFO  c.m.l.TwitterKafkaStatusListener - Twitter status with text lectus consectetuer magna -Java -Microservices -Spring -Kafka -Elasticsearch porttitor porttitor
+2023-06-10 12:24:50 [main] INFO  c.m.l.TwitterKafkaStatusListener - Twitter status with text purus massa purus massa posuere amet -Java -Microservices -Spring -Kafka -Elasticsearch consectetuer ultricies ipsum magna

@@ -1,0 +1,226 @@
+2023-06-14 20:53:18 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.4.Final
+2023-06-14 20:53:18 [main] INFO  c.m.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 15224 (D:\Projects\Port\Java\microservices\twitter-to-kafka-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-14 20:53:18 [main] INFO  c.m.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2023-06-14 20:53:19 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=7709da66-c9b6-3614-8473-2259a8627f28
+2023-06-14 20:53:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-14 20:53:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-14 20:53:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-14 20:53:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-06-14 20:53:20 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-14 20:53:20 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1026 ms
+2023-06-14 20:53:20 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.microservices.runner.StreamRunner' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-06-14 20:53:20 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-06-14 20:53:20 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-14 20:53:20 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.microservices.TwitterToKafkaServiceApplication required a bean of type 'com.microservices.runner.StreamRunner' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.microservices.runner.StreamRunner' in your configuration.
+
+2023-06-14 20:54:12 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.4.Final
+2023-06-14 20:54:12 [main] INFO  c.m.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 18400 (D:\Projects\Port\Java\microservices\twitter-to-kafka-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-14 20:54:12 [main] INFO  c.m.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2023-06-14 20:54:12 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=7709da66-c9b6-3614-8473-2259a8627f28
+2023-06-14 20:54:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-14 20:54:13 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-14 20:54:13 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-14 20:54:13 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-06-14 20:54:13 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-14 20:54:13 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1026 ms
+2023-06-14 20:54:13 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.microservices.runner.StreamRunner' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-06-14 20:54:13 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-06-14 20:54:13 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-14 20:54:13 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.microservices.TwitterToKafkaServiceApplication required a bean of type 'com.microservices.runner.StreamRunner' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.microservices.runner.StreamRunner' in your configuration.
+
+2023-06-14 20:54:27 [main] INFO  c.m.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 14188 (D:\Projects\Port\Java\microservices\twitter-to-kafka-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-14 20:54:27 [main] INFO  c.m.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2023-06-14 20:54:27 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.4.Final
+2023-06-14 20:54:27 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=7709da66-c9b6-3614-8473-2259a8627f28
+2023-06-14 20:54:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-14 20:54:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-14 20:54:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-14 20:54:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-06-14 20:54:28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-14 20:54:28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1000 ms
+2023-06-14 20:54:28 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.microservices.runner.StreamRunner' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-06-14 20:54:28 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-06-14 20:54:28 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-14 20:54:28 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.microservices.TwitterToKafkaServiceApplication required a bean of type 'com.microservices.runner.StreamRunner' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.microservices.runner.StreamRunner' in your configuration.
+
+2023-06-14 20:55:10 [main] INFO  c.m.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 9220 (D:\Projects\Port\Java\microservices\twitter-to-kafka-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-14 20:55:10 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.4.Final
+2023-06-14 20:55:10 [main] INFO  c.m.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2023-06-14 20:55:11 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=7709da66-c9b6-3614-8473-2259a8627f28
+2023-06-14 20:55:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-14 20:55:11 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-14 20:55:11 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-14 20:55:11 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-06-14 20:55:11 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-14 20:55:11 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1036 ms
+2023-06-14 20:55:11 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.microservices.runner.StreamRunner' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-06-14 20:55:11 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-06-14 20:55:11 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-14 20:55:11 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.microservices.TwitterToKafkaServiceApplication required a bean of type 'com.microservices.runner.StreamRunner' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.microservices.runner.StreamRunner' in your configuration.
+
+2023-06-14 20:58:32 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.4.Final
+2023-06-14 20:58:32 [main] INFO  c.m.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 23016 (D:\Projects\Port\Java\microservices\twitter-to-kafka-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-14 20:58:32 [main] INFO  c.m.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2023-06-14 20:58:33 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=7709da66-c9b6-3614-8473-2259a8627f28
+2023-06-14 20:58:33 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-14 20:58:33 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-14 20:58:33 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-14 20:58:33 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-06-14 20:58:33 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-14 20:58:33 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1046 ms
+2023-06-14 20:58:33 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.microservices.runner.StreamRunner' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-06-14 20:58:33 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-06-14 20:58:33 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-14 20:58:33 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.microservices.TwitterToKafkaServiceApplication required a bean of type 'com.microservices.runner.StreamRunner' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.microservices.runner.StreamRunner' in your configuration.
+
+2023-06-14 20:59:53 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Unable to load config data from 'configserver:'
+	at org.springframework.boot.context.config.StandardConfigDataLocationResolver.getReferences(StandardConfigDataLocationResolver.java:141)
+	at org.springframework.boot.context.config.StandardConfigDataLocationResolver.getReferences(StandardConfigDataLocationResolver.java:126)
+	at org.springframework.boot.context.config.StandardConfigDataLocationResolver.resolve(StandardConfigDataLocationResolver.java:119)
+	at org.springframework.boot.context.config.ConfigDataLocationResolvers.lambda$resolve$1(ConfigDataLocationResolvers.java:115)
+	at org.springframework.boot.context.config.ConfigDataLocationResolvers.resolve(ConfigDataLocationResolvers.java:126)
+	at org.springframework.boot.context.config.ConfigDataLocationResolvers.resolve(ConfigDataLocationResolvers.java:115)
+	at org.springframework.boot.context.config.ConfigDataLocationResolvers.resolve(ConfigDataLocationResolvers.java:107)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolve(ConfigDataImporter.java:105)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolve(ConfigDataImporter.java:97)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolveAndLoad(ConfigDataImporter.java:85)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentContributors.withProcessedImports(ConfigDataEnvironmentContributors.java:116)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processInitial(ConfigDataEnvironment.java:240)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processAndApply(ConfigDataEnvironment.java:227)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:102)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:94)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:102)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:87)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:29)
+Caused by: java.lang.IllegalStateException: File extension is not known to any PropertySourceLoader. If the location is meant to reference a directory, it must end in '/' or File.separator
+	at org.springframework.boot.context.config.StandardConfigDataLocationResolver.getReferencesForFile(StandardConfigDataLocationResolver.java:229)
+	at org.springframework.boot.context.config.StandardConfigDataLocationResolver.getReferences(StandardConfigDataLocationResolver.java:138)
+	... 31 common frames omitted
+2023-06-14 21:00:31 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Unable to load config data from 'configserver:'
+	at org.springframework.boot.context.config.StandardConfigDataLocationResolver.getReferences(StandardConfigDataLocationResolver.java:141)
+	at org.springframework.boot.context.config.StandardConfigDataLocationResolver.getReferences(StandardConfigDataLocationResolver.java:126)
+	at org.springframework.boot.context.config.StandardConfigDataLocationResolver.resolve(StandardConfigDataLocationResolver.java:119)
+	at org.springframework.boot.context.config.ConfigDataLocationResolvers.lambda$resolve$1(ConfigDataLocationResolvers.java:115)
+	at org.springframework.boot.context.config.ConfigDataLocationResolvers.resolve(ConfigDataLocationResolvers.java:126)
+	at org.springframework.boot.context.config.ConfigDataLocationResolvers.resolve(ConfigDataLocationResolvers.java:115)
+	at org.springframework.boot.context.config.ConfigDataLocationResolvers.resolve(ConfigDataLocationResolvers.java:107)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolve(ConfigDataImporter.java:105)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolve(ConfigDataImporter.java:97)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolveAndLoad(ConfigDataImporter.java:85)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentContributors.withProcessedImports(ConfigDataEnvironmentContributors.java:116)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processInitial(ConfigDataEnvironment.java:240)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processAndApply(ConfigDataEnvironment.java:227)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:102)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:94)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:102)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:87)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:29)
+Caused by: java.lang.IllegalStateException: File extension is not known to any PropertySourceLoader. If the location is meant to reference a directory, it must end in '/' or File.separator
+	at org.springframework.boot.context.config.StandardConfigDataLocationResolver.getReferencesForFile(StandardConfigDataLocationResolver.java:229)
+	at org.springframework.boot.context.config.StandardConfigDataLocationResolver.getReferences(StandardConfigDataLocationResolver.java:138)
+	... 31 common frames omitted

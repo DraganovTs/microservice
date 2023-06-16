@@ -13,7 +13,10 @@ spring:
           search-paths: config-server-repository
           clone-on-start: true
     fail-fast: true
-
+  security:
+    user:
+      name: spring_cloud_user
+      password: '1234'
 
 log:
   app-name: config-server
