@@ -70,6 +70,8 @@ public class MockKafkaStreamRunner implements StreamRunner {
         this.twitterKafkaStatusListener = statusListener;
     }
 
+
+
     @Override
     public void start() throws TwitterException {
         String[] keywords = twitterToKafkaServiceConfigData.getTwitterKeywords().toArray(new String[0]);
