@@ -677,3 +677,584 @@ org.apache.kafka.common.errors.TimeoutException: The AdminClient thread has exit
 2023-06-19 20:15:17 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
 2023-06-19 20:15:17 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
 2023-06-19 20:15:17 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-06-19 21:06:20 [main] INFO  c.m.KafkaToElasticServiceApplication - Starting KafkaToElasticServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 28584 (D:\Projects\Port\Java\microservices\kafka\kafka-to-elastic-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-19 21:06:20 [main] INFO  c.m.KafkaToElasticServiceApplication - The following 1 profile is active: "kafka_to_elastic"
+2023-06-19 21:06:20 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-06-19 21:06:20 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=kafka-to-elastic-service,config-client, profiles=[kafka_to_elastic], label=null, version=1eaf84ad49e9e301dfdfd1ff87af336e8340d0ec, state=null
+2023-06-19 21:06:21 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=644ebbc7-0e6b-3f09-ab03-2c278e8ac764
+2023-06-19 21:06:21 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-19 21:06:21 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.1
+2023-06-19 21:06:21 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 97671528ba54a138
+2023-06-19 21:06:21 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1687197981705
+2023-06-19 21:06:21 [main] INFO  o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 29551f09-142a-40d0-8c83-250cad7c5a99
+
+2023-06-19 21:06:22 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8182
+2023-06-19 21:06:22 [main] INFO  c.m.KafkaToElasticServiceApplication - Started KafkaToElasticServiceApplication in 2.701 seconds (JVM running for 3.199)
+2023-06-19 21:08:34 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2023-06-19 21:08:34 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-06-19 21:08:34 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-06-19 21:08:34 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-06-19 21:08:40 [main] INFO  c.m.KafkaToElasticServiceApplication - Starting KafkaToElasticServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 4104 (D:\Projects\Port\Java\microservices\kafka\kafka-to-elastic-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-19 21:08:40 [main] INFO  c.m.KafkaToElasticServiceApplication - The following 1 profile is active: "kafka_to_elastic"
+2023-06-19 21:08:40 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-06-19 21:08:40 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=kafka-to-elastic-service,config-client, profiles=[kafka_to_elastic], label=null, version=1eaf84ad49e9e301dfdfd1ff87af336e8340d0ec, state=null
+2023-06-19 21:08:40 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=7bafff9e-006e-366c-9d84-adcd2dc2d129
+2023-06-19 21:08:41 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-19 21:08:41 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.1
+2023-06-19 21:08:41 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 97671528ba54a138
+2023-06-19 21:08:41 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1687198121281
+2023-06-19 21:08:41 [main] INFO  o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 9d1231b7-d0cc-4da3-aec8-74b8dbf44465
+
+2023-06-19 21:08:41 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8182
+2023-06-19 21:08:42 [main] INFO  c.m.KafkaToElasticServiceApplication - Started KafkaToElasticServiceApplication in 2.725 seconds (JVM running for 3.227)
+2023-06-19 21:13:41 [kafka-admin-client-thread | adminclient-1] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node -2 disconnected.
+2023-06-19 21:15:43 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2023-06-19 21:15:43 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-06-19 21:15:43 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-06-19 21:15:43 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-06-19 21:15:50 [main] INFO  c.m.KafkaToElasticServiceApplication - Starting KafkaToElasticServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 13260 (D:\Projects\Port\Java\microservices\kafka\kafka-to-elastic-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-19 21:15:50 [main] INFO  c.m.KafkaToElasticServiceApplication - The following 1 profile is active: "kafka_to_elastic"
+2023-06-19 21:15:50 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-06-19 21:15:50 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=kafka-to-elastic-service,config-client, profiles=[kafka_to_elastic], label=null, version=1eaf84ad49e9e301dfdfd1ff87af336e8340d0ec, state=null
+2023-06-19 21:15:50 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=7bafff9e-006e-366c-9d84-adcd2dc2d129
+2023-06-19 21:15:50 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaConsumer' defined in file [D:\Projects\Port\Java\microservices\kafka\kafka-to-elastic-service\target\classes\com\microservices\consumer\impl\TwitterKafkaConsumer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.springframework.kafka.config.KafkaListenerEndpointRegistry' available: expected single matching bean but found 2: kafkaListenerEndpointRegistry,org.springframework.kafka.config.internalKafkaListenerEndpointRegistry
+2023-06-19 21:15:50 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-19 21:15:50 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.microservices.consumer.impl.TwitterKafkaConsumer required a single bean, but 2 were found:
+	- kafkaListenerEndpointRegistry: defined by method 'kafkaListenerEndpointRegistry' in class path resource [com/microservices/config/BeanConfiguration.class]
+	- org.springframework.kafka.config.internalKafkaListenerEndpointRegistry: defined in null
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2023-06-19 21:16:05 [main] INFO  c.m.KafkaToElasticServiceApplication - Starting KafkaToElasticServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 24628 (D:\Projects\Port\Java\microservices\kafka\kafka-to-elastic-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-19 21:16:05 [main] INFO  c.m.KafkaToElasticServiceApplication - The following 1 profile is active: "kafka_to_elastic"
+2023-06-19 21:16:05 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-06-19 21:16:05 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=kafka-to-elastic-service,config-client, profiles=[kafka_to_elastic], label=null, version=1eaf84ad49e9e301dfdfd1ff87af336e8340d0ec, state=null
+2023-06-19 21:16:05 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=644ebbc7-0e6b-3f09-ab03-2c278e8ac764
+2023-06-19 21:16:05 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-19 21:16:05 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.1
+2023-06-19 21:16:05 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 97671528ba54a138
+2023-06-19 21:16:05 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1687198565979
+2023-06-19 21:16:06 [main] INFO  o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 561eb849-2aef-47bf-bdc8-f9df3031e87d
+
+2023-06-19 21:16:06 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8182
+2023-06-19 21:16:06 [main] INFO  c.m.KafkaToElasticServiceApplication - Started KafkaToElasticServiceApplication in 2.619 seconds (JVM running for 3.11)
+2023-06-19 21:18:10 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2023-06-19 21:18:10 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-06-19 21:18:10 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-06-19 21:18:10 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-06-19 21:18:15 [main] INFO  c.m.KafkaToElasticServiceApplication - Starting KafkaToElasticServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 24648 (D:\Projects\Port\Java\microservices\kafka\kafka-to-elastic-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-19 21:18:15 [main] INFO  c.m.KafkaToElasticServiceApplication - The following 1 profile is active: "kafka_to_elastic"
+2023-06-19 21:18:15 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-06-19 21:18:15 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=kafka-to-elastic-service,config-client, profiles=[kafka_to_elastic], label=null, version=1eaf84ad49e9e301dfdfd1ff87af336e8340d0ec, state=null
+2023-06-19 21:18:16 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=644ebbc7-0e6b-3f09-ab03-2c278e8ac764
+2023-06-19 21:18:16 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-19 21:18:16 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.1
+2023-06-19 21:18:16 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 97671528ba54a138
+2023-06-19 21:18:16 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1687198696583
+2023-06-19 21:18:16 [main] INFO  o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 252aee61-3f2e-4189-b3fb-482ff17a08d5
+
+2023-06-19 21:18:17 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8182
+2023-06-19 21:18:17 [main] INFO  c.m.KafkaToElasticServiceApplication - Started KafkaToElasticServiceApplication in 2.653 seconds (JVM running for 3.158)
+2023-06-19 21:19:33 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2023-06-19 21:19:33 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-06-19 21:19:33 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-06-19 21:19:33 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-06-19 21:19:39 [main] INFO  c.m.KafkaToElasticServiceApplication - Starting KafkaToElasticServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 14696 (D:\Projects\Port\Java\microservices\kafka\kafka-to-elastic-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-19 21:19:39 [main] INFO  c.m.KafkaToElasticServiceApplication - The following 1 profile is active: "kafka_to_elastic"
+2023-06-19 21:19:39 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-06-19 21:19:39 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=kafka-to-elastic-service,config-client, profiles=[kafka_to_elastic], label=null, version=1eaf84ad49e9e301dfdfd1ff87af336e8340d0ec, state=null
+2023-06-19 21:19:39 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=495c2881-97fe-319e-9795-8550b833fafe
+2023-06-19 21:19:39 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaConsumer' defined in file [D:\Projects\Port\Java\microservices\kafka\kafka-to-elastic-service\target\classes\com\microservices\consumer\impl\TwitterKafkaConsumer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.springframework.kafka.config.KafkaListenerEndpointRegistry' available: expected single matching bean but found 2: kafkaListenerEndpointRegistry,org.springframework.kafka.config.internalKafkaListenerEndpointRegistry
+2023-06-19 21:19:39 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-19 21:19:39 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.microservices.consumer.impl.TwitterKafkaConsumer required a single bean, but 2 were found:
+	- kafkaListenerEndpointRegistry: defined by method 'kafkaListenerEndpointRegistry' in class path resource [com/microservices/config/Beans.class]
+	- org.springframework.kafka.config.internalKafkaListenerEndpointRegistry: defined in null
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2023-06-19 21:19:52 [main] INFO  c.m.KafkaToElasticServiceApplication - Starting KafkaToElasticServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 26956 (D:\Projects\Port\Java\microservices\kafka\kafka-to-elastic-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-19 21:19:52 [main] INFO  c.m.KafkaToElasticServiceApplication - The following 1 profile is active: "kafka_to_elastic"
+2023-06-19 21:19:52 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-06-19 21:19:52 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=kafka-to-elastic-service,config-client, profiles=[kafka_to_elastic], label=null, version=1eaf84ad49e9e301dfdfd1ff87af336e8340d0ec, state=null
+2023-06-19 21:19:53 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=495c2881-97fe-319e-9795-8550b833fafe
+2023-06-19 21:19:53 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-19 21:19:53 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.1
+2023-06-19 21:19:53 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 97671528ba54a138
+2023-06-19 21:19:53 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1687198793681
+2023-06-19 21:19:53 [main] INFO  o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 3673807c-048e-4a5a-a83e-7baf94a5b200
+
+2023-06-19 21:19:54 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8182
+2023-06-19 21:19:54 [main] INFO  c.m.KafkaToElasticServiceApplication - Started KafkaToElasticServiceApplication in 2.581 seconds (JVM running for 3.068)
+2023-06-19 21:20:30 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2023-06-19 21:20:30 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-06-19 21:20:30 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-06-19 21:20:30 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-06-19 21:20:35 [main] INFO  c.m.KafkaToElasticServiceApplication - Starting KafkaToElasticServiceApplication using Java 19.0.1 on DESKTOP-RP5QVIC with PID 23072 (D:\Projects\Port\Java\microservices\kafka\kafka-to-elastic-service\target\classes started by zabra in D:\Projects\Port\Java\microservices)
+2023-06-19 21:20:35 [main] INFO  c.m.KafkaToElasticServiceApplication - The following 1 profile is active: "kafka_to_elastic"
+2023-06-19 21:20:35 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-06-19 21:20:35 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=kafka-to-elastic-service,config-client, profiles=[kafka_to_elastic], label=null, version=1eaf84ad49e9e301dfdfd1ff87af336e8340d0ec, state=null
+2023-06-19 21:20:35 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=495c2881-97fe-319e-9795-8550b833fafe
+2023-06-19 21:20:36 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-19 21:20:36 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.1
+2023-06-19 21:20:36 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 97671528ba54a138
+2023-06-19 21:20:36 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1687198836087
+2023-06-19 21:20:36 [main] INFO  o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: b28c4474-96cb-45aa-afdd-7088f6df51ee
+
+2023-06-19 21:20:36 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8182
+2023-06-19 21:20:36 [main] INFO  c.m.KafkaToElasticServiceApplication - Started KafkaToElasticServiceApplication in 2.615 seconds (JVM running for 3.117)
+2023-06-19 21:21:20 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2023-06-19 21:21:20 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-06-19 21:21:20 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-06-19 21:21:20 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed

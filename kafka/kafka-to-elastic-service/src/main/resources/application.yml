@@ -7,10 +7,7 @@ spring:
     import: 'configserver:'
   cloud:
     config:
-      name: kafka-to-elastic-service,config-client
+      name: twitter-to-kafka-service,config-client
       username: spring_cloud_user
       password: '1234'
-
-log:
-  app-name: kafka-to-elastic-service
-
+      uri: http://localhost:8888
