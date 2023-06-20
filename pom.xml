@@ -44,6 +44,7 @@
 		<spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
 		<logstash-logback-encoder.version>7.2</logstash-logback-encoder.version>
 		<spring.boot.security.version>2.7.3</spring.boot.security.version>
+		<elastic.version>7.17.4</elastic.version>
 
 	</properties>
 
@@ -161,6 +162,21 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-security</artifactId>
 				<version>${spring.boot.security.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.elasticsearch</groupId>
+				<artifactId>elasticsearch</artifactId>
+				<version>${elastic.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.elasticsearch.client</groupId>
+				<artifactId>elasticsearch-rest-high-level-client</artifactId>
+				<version>${elastic.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.confluent</groupId>
