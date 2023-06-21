@@ -10,7 +10,7 @@ services:
     user: root
     entrypoint: ["check-config-server-started.sh"]
     depends_on:
-      - config-server-1
+      - config-server
       - kafka-broker-1
       - kafka-broker-2
       - kafka-broker-3
