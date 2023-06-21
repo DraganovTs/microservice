@@ -3,7 +3,10 @@ package com.microservices.consumer.impl;
 import com.microservices.client.KafkaAdminClient;
 import com.microservices.config.KafkaConfigData;
 import com.microservices.consumer.KafkaConsumer;
+import com.microservices.index.impl.TwitterIndexModel;
 import com.microservices.kafka.avro.model.TwitterAvroModel;
+import com.microservices.service.ElasticIndexClient;
+import com.microservices.transformer.AvroToElasticModelTransformer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.event.ApplicationStartedEvent;
@@ -29,16 +32,20 @@ public class TwitterKafkaConsumer implements KafkaConsumer<TwitterAvroModel> {
 
     private final KafkaConfigData kafkaConfigData;
 
+    private final AvroToElasticModelTransformer avroToElasticModelTransformer;
 
+    private final ElasticIndexClient<TwitterIndexModel> elasticIndexClient;
 
 
     public TwitterKafkaConsumer(KafkaListenerEndpointRegistry listenerEndpointRegistry,
                                 KafkaAdminClient adminClient,
-                                KafkaConfigData configData) {
+                                KafkaConfigData configData, AvroToElasticModelTransformer avroToElasticModelTransformer, ElasticIndexClient<TwitterIndexModel> elasticIndexClient) {
         this.kafkaListenerEndpointRegistry = listenerEndpointRegistry;
         this.kafkaAdminClient = adminClient;
         this.kafkaConfigData = configData;
 
+        this.avroToElasticModelTransformer = avroToElasticModelTransformer;
+        this.elasticIndexClient = elasticIndexClient;
     }
 
     @EventListener
@@ -62,6 +69,9 @@ public class TwitterKafkaConsumer implements KafkaConsumer<TwitterAvroModel> {
                 partitions.toString(),
                 offsets.toString(),
                 Thread.currentThread().getId());
+        List<TwitterIndexModel> twitterIndexModels = avroToElasticModelTransformer.getElasticModels(messages);
+        List<String> documentIds = elasticIndexClient.save(twitterIndexModels);
+        LOG.info("Documents saved to elasticsearch with ids {}", documentIds.toArray());
     }
 
 }

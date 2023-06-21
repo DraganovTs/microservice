@@ -11,3 +11,7 @@ spring:
       username: spring_cloud_user
       password: '1234'
       uri: http://localhost:8888
+
+log:
+  app-name: kafka-to-elastic-service
+
