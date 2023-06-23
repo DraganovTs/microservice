@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: elastic-query-service
+  profiles:
+    active: elastic_query
+  config:
+    import: 'configserver:'
+  cloud:
+    config:
+      name: twitter-to-kafka-service,config-client
+      username: spring_cloud_user
+      password: '1234'
+      uri: http://localhost:8888
+
+log:
+  app-name: elastic-query-service
