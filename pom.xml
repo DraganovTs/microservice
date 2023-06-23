@@ -15,6 +15,7 @@
         <module>kafka/kafka-to-elastic-service</module>
         <module>elastic</module>
 		<module>common-util</module>
+		<module>elastic-query-service</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

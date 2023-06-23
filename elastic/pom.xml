@@ -16,7 +16,6 @@
         <module>elastic-index-client</module>
         <module>elastic-model</module>
         <module>elastic-query-client</module>
-        <module>elastic-query-service</module>
     </modules>
 
 
