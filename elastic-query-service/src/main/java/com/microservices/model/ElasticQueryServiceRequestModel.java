@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotEmpty;
+
 
 @Data
 @Builder
@@ -13,6 +15,6 @@ import lombok.NoArgsConstructor;
 public class ElasticQueryServiceRequestModel {
 
     private String id;
-
+    @NotEmpty
     private String text;
 }
