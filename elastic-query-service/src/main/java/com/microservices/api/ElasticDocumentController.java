@@ -3,6 +3,7 @@ package com.microservices.api;
 import com.microservices.buisiness.ElasticQueryService;
 import com.microservices.model.ElasticQueryServiceRequestModel;
 import com.microservices.model.ElasticQueryServiceResponseModel;
+import com.microservices.model.ElasticQueryServiceResponseModelV2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +40,14 @@ public class ElasticDocumentController {
         return ResponseEntity.ok(elasticQueryServiceResponseModel);
     }
 
+    @GetMapping(value = "/{id}", produces = "application/vnd.api.v2+json")
+    public @ResponseBody ResponseEntity<ElasticQueryServiceResponseModelV2> getDocumentByIdV2(@PathVariable @NotEmpty String id) {
+        ElasticQueryServiceResponseModel elasticQueryServiceResponseModel = elasticQueryService.getDocumentById(id);
+        ElasticQueryServiceResponseModelV2 responseModelV2 = getV2Model(elasticQueryServiceResponseModel);
+        LOG.info("Elasticsearch returned document with id {}", id);
+        return ResponseEntity.ok(responseModelV2);
+    }
+
     @PostMapping("/get-document-by-text")
     public @ResponseBody
     ResponseEntity<List<ElasticQueryServiceResponseModel>>
@@ -50,5 +59,17 @@ public class ElasticDocumentController {
 
 
         return ResponseEntity.ok(response);
+    }
+
+    private ElasticQueryServiceResponseModelV2 getV2Model(ElasticQueryServiceResponseModel responseModel){
+        ElasticQueryServiceResponseModelV2 responseModelV2 = ElasticQueryServiceResponseModelV2.builder()
+                .id(Long.parseLong(responseModel.getId()))
+                .userId(responseModel.getUserId())
+                .text(responseModel.getText())
+                .textV2("Version 2 text")
+                .build();
+
+        responseModelV2.add(responseModel.getLinks());
+        return responseModelV2;
     }
 }
