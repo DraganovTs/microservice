@@ -22,3 +22,4 @@
 2023-06-26 19:24:21 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2023-06-26 19:24:21 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
 2023-06-26 19:24:22 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\zabra\AppData\Local\Temp\config-repo-7722554348200342553\config-server-repository\config-client.yml]' via location 'file:/C:/Users/zabra/AppData/Local/Temp/config-repo-7722554348200342553/config-server-repository/'
+2023-06-26 20:33:25 [Thread-3] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\zabra\AppData\Local\Temp\config-repo-7722554348200342553\.git\objects\pack\pack-0516d22d576b2c34f21b8887da7cbeff0becb662.idx

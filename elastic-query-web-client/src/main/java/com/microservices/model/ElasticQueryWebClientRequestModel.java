@@ -1,5 +1,6 @@
 package com.microservices.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
