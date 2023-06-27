@@ -10,6 +10,5 @@ spring:
       name: elastic-query-web-client,config-client
       username: spring_cloud_user
       password: '1234'
-      uri: http://localhost:8888
 log:
   app-name: elastic-query-web-client
