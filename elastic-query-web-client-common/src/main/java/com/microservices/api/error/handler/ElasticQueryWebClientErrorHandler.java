@@ -19,7 +19,7 @@ public class ElasticQueryWebClientErrorHandler {
 
     private static final Logger LOG = LoggerFactory.getLogger(ElasticQueryWebClientErrorHandler.class);
 
-    @ExceptionHandler(org.springframework.security.access.AccessDeniedException.class)
+    @ExceptionHandler(AccessDeniedException.class)
     public String handle(AccessDeniedException e, Model model) {
         LOG.error("Access denied exception!");
         model.addAttribute("error", HttpStatus.UNAUTHORIZED.getReasonPhrase());
