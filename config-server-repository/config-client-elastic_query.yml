@@ -12,8 +12,24 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8040/admin/master/console/#/microservice-realm
-          jwk-set-uri: https://hostname/auth/realms/master/.well-known/openid-configuration/
+          issuer-uri: http://localhost:8081/auth/realms/microservices-realm
+          jwk-set-uri: http://localhost:8081/auth/realms/microservices-realm/protocol/openid-connect/certs
+  jpa:
+    open-in-view: false
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=public&binaryTransfer=true&reWriteBatchedInserts=true
+    username: postgres
+    password: '{cipher}d4af18fcab2f5ece79a7b41f36066be102deb3cae3394854edfdf490b2e42d12'
+    driver-class-name: org.postgresql.Driver
+    platform: postgres
+    schema: classpath:init-schema.sql
+    data: classpath:init-data.sql
+    initialization-mode: always
 
 elastic-query-config:
   text-field: text
@@ -24,10 +40,9 @@ elastic-config:
   connect-timeout-ms: 5000
   socket-timeout-ms: 30000
 
-
 user-config:
-  username: userTest
-  password: passwordTest
+  username: test
+  password: '{cipher}baeb90d57edb9a050b97b98a7d8cabe80ee884e6fff16c22956172459a43e54d'
   roles: USER
 
 springdoc:
@@ -37,5 +52,4 @@ springdoc:
     path: /swagger-ui.html
 
 security:
-  paths-to-ignore: /api-docs, /actuator/**
-
+  paths-to-ignore: /api-docs
