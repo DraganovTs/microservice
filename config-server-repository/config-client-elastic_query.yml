@@ -12,7 +12,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8040/admin/master/console/#/microservice-realm/
+          issuer-uri: http://localhost:8081/auth/realms/microservices-realm
           jwk-set-uri: https://hostname/auth/realms/master/.well-known/openid-configuration/
 
 elastic-query-config:
