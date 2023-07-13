@@ -53,6 +53,7 @@
 		<spring.boot.security.version>2.7.3</spring.boot.security.version>
 		<elastic.version>7.17.4</elastic.version>
 		<openapi.ui.version>1.6.11</openapi.ui.version>
+		<postgresql.version>42.5.0</postgresql.version>
 
 	</properties>
 
@@ -224,6 +225,11 @@
 				<groupId>org.springdoc</groupId>
 				<artifactId>springdoc-openapi-ui</artifactId>
 				<version>${openapi.ui.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.confluent</groupId>
