@@ -24,7 +24,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres?currentSchema=public&binaryTransfer=true&reWriteBatchedInserts=true
     username: postgres
-    password: '{cipher}d4af18fcab2f5ece79a7b41f36066be102deb3cae3394854edfdf490b2e42d12'
+    password: postgres
     driver-class-name: org.postgresql.Driver
     platform: postgres
     schema: classpath:init-schema.sql
@@ -39,12 +39,10 @@ elastic-config:
   connection-url: http://localhost:9200
   connect-timeout-ms: 5000
   socket-timeout-ms: 30000
-
 user-config:
-  username: test
-  password: '{cipher}baeb90d57edb9a050b97b98a7d8cabe80ee884e6fff16c22956172459a43e54d'
+  username: userTest
+  password: passwordTest
   roles: USER
-
 springdoc:
   api-docs:
     path: /api-docs
