@@ -5,10 +5,12 @@ import com.microservices.dataaccess.entity.UserPermission;
 import com.microservices.dataaccess.repository.UserPermissionRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TwitterQueryUserService implements QueryUserService {
 
     private static final Logger LOG = LoggerFactory.getLogger(TwitterQueryUserService.class);
