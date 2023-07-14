@@ -30,7 +30,7 @@ ALTER TABLE public.documents
 
 DROP TABLE IF EXISTS public.user_permissions CASCADE;
 
-CREATE TABLE public.user_permissions
+CREATE TABLE user_permissions
 (
     user_id uuid NOT NULL,
     document_id uuid NOT NULL,
@@ -39,15 +39,12 @@ CREATE TABLE public.user_permissions
     CONSTRAINT document_fk FOREIGN KEY (document_id)
         REFERENCES public.documents (id) MATCH SIMPLE
         ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-        NOT VALID,
+        ON DELETE NO ACTION,
     CONSTRAINT user_fk FOREIGN KEY (user_id)
         REFERENCES public.users (id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
-)
-
-    TABLESPACE pg_default;
+);
 
 ALTER TABLE public.user_permissions
     OWNER to postgres;
