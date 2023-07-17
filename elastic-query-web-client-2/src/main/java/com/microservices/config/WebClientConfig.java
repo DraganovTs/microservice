@@ -12,10 +12,8 @@ import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.security.oauth2.client.web.OAuth2AuthorizedClientRepository;
 import org.springframework.security.oauth2.client.web.reactive.function.client.ServletOAuth2AuthorizedClientExchangeFilterFunction;
-import org.springframework.web.reactive.function.client.ExchangeFilterFunctions;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.netty.http.client.HttpClient;
-import reactor.netty.tcp.TcpClient;
 
 import java.util.concurrent.TimeUnit;
 
