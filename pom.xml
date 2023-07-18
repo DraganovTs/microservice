@@ -22,6 +22,7 @@
 		<module>reactive-elastic-query-service</module>
 		<module>reactive-elastic-query-web-client</module>
 		<module>elastic-query-web-client-2</module>
+        <module>kafka-streams-service</module>
 
 	</modules>
 	<parent>
@@ -56,6 +57,7 @@
 		<elastic.version>7.17.4</elastic.version>
 		<openapi.ui.version>1.6.11</openapi.ui.version>
 		<postgresql.version>42.5.0</postgresql.version>
+		<kafka-streams-avro-serde.version>7.2.1</kafka-streams-avro-serde.version>
 
 	</properties>
 
@@ -232,6 +234,11 @@
 				<groupId>org.postgresql</groupId>
 				<artifactId>postgresql</artifactId>
 				<version>${postgresql.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.confluent</groupId>
+				<artifactId>kafka-streams-avro-serde</artifactId>
+				<version>${kafka-streams-avro-serde.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.confluent</groupId>
