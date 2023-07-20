@@ -2,6 +2,7 @@ package com.microservices.runner.impl;
 
 import com.microservices.config.KafkaConfigData;
 import com.microservices.config.KafkaStreamsConfigData;
+import com.microservices.kafka.avro.model.TwitterAnalyticsAvroModel;
 import com.microservices.kafka.avro.model.TwitterAvroModel;
 import com.microservices.runner.StreamsRunner;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
@@ -63,7 +64,7 @@ public class KafkaStreamsRunner implements StreamsRunner<String, Long> {
         final KStream<Long, TwitterAvroModel> twitterAvroModelKStream =
                 getTwitterAvroModelKStream(serdeConfig, streamsBuilder);
 
-
+        createTopology(twitterAvroModelKStream, serdeConfig);
 
         startStreaming(streamsBuilder);
     }
@@ -103,11 +104,43 @@ public class KafkaStreamsRunner implements StreamsRunner<String, Long> {
         LOG.info("Kafka streaming started..");
     }
 
+    private void createTopology(KStream<Long, TwitterAvroModel> twitterAvroModelKStream,
+                                Map<String, String> serdeConfig) {
+        Pattern pattern = Pattern.compile(REGEX, Pattern.UNICODE_CHARACTER_CLASS);
 
+        Serde<TwitterAnalyticsAvroModel> serdeTwitterAnalyticsAvroModel = getSerdeAnalyticsModel(serdeConfig);
 
+        twitterAvroModelKStream
+                .flatMapValues(value -> Arrays.asList(pattern.split(value.getText().toLowerCase())))
+                .groupBy((key, word) -> word)
+                .count(Materialized
+                        .<String, Long, KeyValueStore<Bytes, byte[]>>as(kafkaStreamsConfigData.getWordCountStoreName()))
+                .toStream()
+                .map(mapToAnalyticsModel())
+                .to(kafkaStreamsConfigData.getOutputTopicName(),
+                        Produced.with(Serdes.String(), serdeTwitterAnalyticsAvroModel));
 
+    }
 
+    private KeyValueMapper<String, Long, KeyValue<? extends String, ? extends TwitterAnalyticsAvroModel>>
+    mapToAnalyticsModel() {
+        return (word, count) -> {
+            LOG.info("Sending to topic {}, word {} - count {}",
+                    kafkaStreamsConfigData.getOutputTopicName(), word, count);
+            return new KeyValue<>(word, TwitterAnalyticsAvroModel
+                    .newBuilder()
+                    .setWord(word)
+                    .setWordCount(count)
+                    .setCreatedAt(LocalDateTime.now().toEpochSecond(ZoneOffset.UTC))
+                    .build());
+        };
+    }
 
+    private Serde<TwitterAnalyticsAvroModel> getSerdeAnalyticsModel(Map<String, String> serdeConfig) {
+        Serde<TwitterAnalyticsAvroModel> serdeTwitterAnalyticsAvroModel = new SpecificAvroSerde<>();
+        serdeTwitterAnalyticsAvroModel.configure(serdeConfig, false);
+        return serdeTwitterAnalyticsAvroModel;
+    }
 
     private KStream<Long, TwitterAvroModel> getTwitterAvroModelKStream(Map<String, String> serdeConfig,
                                                                        StreamsBuilder streamsBuilder) {
@@ -116,4 +149,5 @@ public class KafkaStreamsRunner implements StreamsRunner<String, Long> {
         return streamsBuilder.stream(kafkaStreamsConfigData.getInputTopicName(), Consumed.with(Serdes.Long(),
                 serdeTwitterAvroModel));
     }
+
 }
