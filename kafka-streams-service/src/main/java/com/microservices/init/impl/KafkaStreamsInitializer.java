@@ -16,9 +16,9 @@ public class KafkaStreamsInitializer implements StreamsInitializer {
 
     private final KafkaAdminClient kafkaAdminClient;
 
-    public KafkaStreamsInitializer(KafkaConfigData kafkaConfigData, KafkaAdminClient kafkaAdminClient) {
-        this.kafkaConfigData = kafkaConfigData;
-        this.kafkaAdminClient = kafkaAdminClient;
+    public KafkaStreamsInitializer(KafkaConfigData configData, KafkaAdminClient adminClient) {
+        this.kafkaConfigData = configData;
+        this.kafkaAdminClient = adminClient;
     }
 
     @Override

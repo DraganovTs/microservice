@@ -30,6 +30,7 @@ import java.util.regex.Pattern;
 @Component
 public class KafkaStreamsRunner implements StreamsRunner<String, Long> {
 
+
     private static final Logger LOG = LoggerFactory.getLogger(KafkaStreamsRunner.class);
 
     // match any non-word characters in a text

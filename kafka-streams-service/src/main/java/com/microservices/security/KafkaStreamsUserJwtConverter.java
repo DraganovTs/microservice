@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 import static com.microservices.constatnts.Constants.NA;
 
 public class KafkaStreamsUserJwtConverter implements Converter<Jwt, AbstractAuthenticationToken> {
+
     private static final String REALM_ACCESS_CLAIM = "realm_access";
     private static final String ROLES_CLAIM = "roles";
     private static final String SCOPE_CLAIM = "scope";

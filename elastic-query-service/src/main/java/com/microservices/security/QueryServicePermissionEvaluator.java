@@ -1,5 +1,6 @@
 package com.microservices.security;
 
+import com.microservices.model.ElasticQueryServiceAnalyticsResponseModel;
 import com.microservices.model.ElasticQueryServiceRequestModel;
 import com.microservices.model.ElasticQueryServiceResponseModel;
 import org.springframework.http.ResponseEntity;
@@ -15,18 +16,26 @@ import java.util.Objects;
 @Component
 public class QueryServicePermissionEvaluator implements PermissionEvaluator {
     private static final String SUPER_USER_ROLE = "APP_SUPER_USER_ROLE";
-
     private final HttpServletRequest httpServletRequest;
 
     public QueryServicePermissionEvaluator(HttpServletRequest request) {
         this.httpServletRequest = request;
     }
 
-    @SuppressWarnings("unchecked")
+
     @Override
     public boolean hasPermission(Authentication authentication,
                                  Object targetDomain,
                                  Object permission) {
+
+
+        /*
+        0) if superUser return always true
+        1) If the target domain object is a request object, then we need
+        to handle it through preauthorize
+        2) If the target domain is responseEntity we are returning from controller,
+        so we should handle it through postAuthorize
+         */
         if (isSuperUser()) {
             return true;
         }
@@ -36,35 +45,34 @@ public class QueryServicePermissionEvaluator implements PermissionEvaluator {
             if (targetDomain == null) {
                 return true;
             }
-            List<ElasticQueryServiceResponseModel> responseBody =
-                    ((ResponseEntity<List<ElasticQueryServiceResponseModel>>) targetDomain).getBody();
+            ElasticQueryServiceAnalyticsResponseModel responseBody =
+                    ((ResponseEntity<ElasticQueryServiceAnalyticsResponseModel>) targetDomain).getBody();
             Objects.requireNonNull(responseBody);
-            return postAuthorize(authentication, responseBody, permission);
+            return postAuthorize(authentication, responseBody.getQueryResponseModels(), permission);
         }
         return false;
     }
-
 
     @Override
     public boolean hasPermission(Authentication authentication,
                                  Serializable targetId,
                                  String targetType,
                                  Object permission) {
-        if (isSuperUser()) {
-            return true;
-        }
-        if (targetId == null) {
+        if(targetId == null)
             return false;
-        }
+
         return preAuthorize(authentication, (String) targetId, permission);
     }
 
-    private boolean preAuthorize(Authentication authentication, String id, Object permission) {
-        TwitterQueryUser twitterQueryUser = (TwitterQueryUser) authentication.getPrincipal();
-        PermissionType userPermission = twitterQueryUser.getPermissions().get(id);
-        return hasPermission((String) permission, userPermission);
+    private boolean hasPermission(String requiredPermission, PermissionType userPermission) {
+        return userPermission != null && requiredPermission.equals(userPermission.getType());
     }
 
+    /*
+    We iterate all response model objects and check if user's permission to the returned object,
+    to do the defined permission, which is always READ in our case, as this is a query service.
+    SO we expect that user has permission to all documents queried, otherwise we don't return the response.
+     */
     private boolean postAuthorize(Authentication authentication,
                                   List<ElasticQueryServiceResponseModel> responseBody,
                                   Object permission) {
@@ -78,10 +86,18 @@ public class QueryServicePermissionEvaluator implements PermissionEvaluator {
         return true;
     }
 
-    private boolean hasPermission(String requiredPermission, PermissionType userPermission) {
-        return userPermission != null && requiredPermission.equals(userPermission.getType());
+
+
+    private boolean preAuthorize(Authentication authentication, String id, Object permission) {
+        TwitterQueryUser twitterQueryUser = (TwitterQueryUser) authentication.getPrincipal();
+        PermissionType userPermission = twitterQueryUser.getPermissions().get(id);
+        return hasPermission((String) permission, userPermission);
     }
 
+    /*
+    We use isUserInRole method in this class which is like calling hasRole
+    method inside preAuthorize annotation
+     */
     private boolean isSuperUser() {
         return httpServletRequest.isUserInRole(SUPER_USER_ROLE);
     }

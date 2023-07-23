@@ -75,4 +75,5 @@ public class WebSecurityConfig {
     Converter<Jwt, ? extends AbstractAuthenticationToken> kafkaStreamsUserJwtAuthConverter() {
         return new KafkaStreamsUserJwtConverter(kafkaStreamsUserDetailsService);
     }
+
 }

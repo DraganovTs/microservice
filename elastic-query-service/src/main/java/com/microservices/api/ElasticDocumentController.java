@@ -1,9 +1,11 @@
 package com.microservices.api;
 
 import com.microservices.buisiness.ElasticQueryService;
+import com.microservices.model.ElasticQueryServiceAnalyticsResponseModel;
 import com.microservices.model.ElasticQueryServiceRequestModel;
 import com.microservices.model.ElasticQueryServiceResponseModel;
 import com.microservices.model.ElasticQueryServiceResponseModelV2;
+import com.microservices.security.TwitterQueryUser;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -11,9 +13,13 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
+import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -28,9 +34,12 @@ public class ElasticDocumentController {
 
     private final ElasticQueryService elasticQueryService;
 
-    public ElasticDocumentController(ElasticQueryService elasticQueryService) {
-        this.elasticQueryService = elasticQueryService;
+    @Value("${server.port}")
+    private String port;
+    public ElasticDocumentController(ElasticQueryService queryService) {
+        this.elasticQueryService = queryService;
     }
+
     @PostAuthorize("hasPermission(returnObject, 'READ')")
     @Operation(summary = "Get all elastic documents")
     @ApiResponses(
@@ -48,7 +57,8 @@ public class ElasticDocumentController {
         LOG.info("Elasticsearch returned {} of documents", response.size());
         return ResponseEntity.ok(response);
     }
-    @PreAuthorize("hasPermission(#id, 'ElasticQueryServiceResponseModel','READ')")
+
+    @PreAuthorize("hasPermission(#id, 'ElasticQueryServiceResponseModel', 'READ')")
     @Operation(summary = "Get elastic document by id")
     @ApiResponses(
             value = {
@@ -67,24 +77,7 @@ public class ElasticDocumentController {
         return ResponseEntity.ok(elasticQueryServiceResponseModel);
     }
 
-    @Operation(summary = "Get elastic document by id V2")
-    @ApiResponses(
-            value = {
-                    @ApiResponse(responseCode = "200", description = "Successful response", content = {
-                            @Content(mediaType = "application/vnd.api.v2+json",
-                                    schema = @Schema(implementation = ElasticQueryServiceResponseModel.class))
-                    }),
-                    @ApiResponse(responseCode = "400", description = "Not Found"),
-                    @ApiResponse(responseCode = "500", description = "Internal server error")
-            } )
-    @GetMapping(value = "/{id}", produces = "application/vnd.api.v2+json")
-    public @ResponseBody ResponseEntity<ElasticQueryServiceResponseModelV2> getDocumentByIdV2(@PathVariable @NotEmpty String id) {
-        ElasticQueryServiceResponseModel elasticQueryServiceResponseModel = elasticQueryService.getDocumentById(id);
-        ElasticQueryServiceResponseModelV2 responseModelV2 = getV2Model(elasticQueryServiceResponseModel);
-        LOG.info("Elasticsearch returned document with id {}", id);
-        return ResponseEntity.ok(responseModelV2);
-    }
-    @PreAuthorize("hasRole('APP_USER_ROLE') || hasRole('APP_SUPER_USER_ROLE') || hasAuthority('SCOPE_APP_USER_ROLE')")
+    @PreAuthorize("hasRole('APP_USER_ROLE') || hasRole('APP_SUPER_USER_ROLE')")
     @PostAuthorize("hasPermission(returnObject, 'READ')")
     @Operation(summary = "Get all documents by text")
     @ApiResponses(
@@ -98,26 +91,41 @@ public class ElasticDocumentController {
             })
     @PostMapping("/get-document-by-text")
     public @ResponseBody
-    ResponseEntity<List<ElasticQueryServiceResponseModel>>
-    getDocumentByText(@RequestBody @Valid ElasticQueryServiceRequestModel elasticQueryServiceRequestModel) {
+    ResponseEntity<ElasticQueryServiceAnalyticsResponseModel>
+    getDocumentByText(@RequestBody @Valid ElasticQueryServiceRequestModel elasticQueryServiceRequestModel,
+                      @AuthenticationPrincipal TwitterQueryUser principal,
+                      @RegisteredOAuth2AuthorizedClient("keycloak")
+                      OAuth2AuthorizedClient oAuth2AuthorizedClient) {
+        LOG.info("User {} querying documents for text {}", principal.getUsername(),
+                elasticQueryServiceRequestModel.getText());
 
-
-        List<ElasticQueryServiceResponseModel> response = elasticQueryService.getDocumentByText(elasticQueryServiceRequestModel.getText());
-        LOG.info("Elasticsearch returned {} of documents", response.size());
-
-
+        ElasticQueryServiceAnalyticsResponseModel response =
+                elasticQueryService.getDocumentByText(elasticQueryServiceRequestModel.getText(),
+                        oAuth2AuthorizedClient.getAccessToken().getTokenValue());
+        LOG.info("Elasticsearch returned {} of documents on port {}",
+                response.getQueryResponseModels().size(), port);
         return ResponseEntity.ok(response);
     }
 
-    private ElasticQueryServiceResponseModelV2 getV2Model(ElasticQueryServiceResponseModel responseModel) {
-        ElasticQueryServiceResponseModelV2 responseModelV2 = ElasticQueryServiceResponseModelV2.builder()
-                .id(Long.parseLong(responseModel.getId()))
-                .userId(responseModel.getUserId())
-                .text(responseModel.getText())
-                .textV2("Version 2 text")
-                .build();
-
-        responseModelV2.add(responseModel.getLinks());
-        return responseModelV2;
+    /*
+    In case we do a breaking change in the API we add the produces that needs to be specificied in negotiation
+         @Operation(summary = "Get all elastic documents")
+    @ApiResponse(
+            value = {
+        @ApiResponses(responseCode =  "200", description = "Successful response", content = {
+                @Content(mediaType = "application/vnd.api.v2+json",
+                schema = @Schema(implementation = ElasticQueryServiceResponseModel.class))
+        }),
+        @ApiResponse(responseCode = "400", description = "Not Found"),
+        @ApiResponse(responseCode = "500", description = "Internal server error")
+       })
+     @GetMapping(value = "/{id}", produces = "application/vnd.api.v2+json")
+     @GetMapping("/{id}")
+    public @ResponseBody ResponseEntity<ElasticQueryServiceResponseModel> getDocumentById(@PathVariable @NotEmpty String id) {
+        ElasticQueryServiceResponseModel elasticQueryServiceResponseModel =
+                elasticQueryService.getDocumentById(id);
+        LOG.info("Elasticsearch returned document with id {}", id);
+        return ResponseEntity.ok(elasticQueryServiceResponseModel);
     }
+     */
 }
