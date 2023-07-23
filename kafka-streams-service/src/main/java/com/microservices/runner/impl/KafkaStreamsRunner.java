@@ -151,4 +151,5 @@ public class KafkaStreamsRunner implements StreamsRunner<String, Long> {
                 serdeTwitterAvroModel));
     }
 
+
 }
