@@ -4,8 +4,8 @@ services:
     image: quay.io/keycloak/keycloak:${KEYCLOAK_VERSION:-latest}
     hostname: keycloak-server
     ports:
-      - '8990:8990'
-    entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev", "--http-port=9091", "--db=postgres"]
+      - '8890:8890'
+    entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev", "--http-port=8890", "--db=postgres"]
     environment:
       - "KC_DB_URL=jdbc:postgresql://postgres_db_keycloak/keycloak"
       - "KC_DB_USERNAME=postgres"

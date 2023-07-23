@@ -6,7 +6,7 @@ services:
     command: start-dev
     hostname: keycloak-server
     ports:
-      - "9091:9091"
+      - "8890:8890"
     environment:
       - "KEYCLOAK_USER=admin"
       - "KEYCLOAK_PASSWORD=admin"
