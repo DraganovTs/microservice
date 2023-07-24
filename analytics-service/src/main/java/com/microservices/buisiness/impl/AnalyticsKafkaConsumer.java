@@ -3,7 +3,10 @@ package com.microservices.buisiness.impl;
 import com.microservices.buisiness.KafkaConsumer;
 import com.microservices.client.KafkaAdminClient;
 import com.microservices.config.KafkaConfigData;
+import com.microservices.dataaccess.entity.AnalyticsEntity;
+import com.microservices.dataaccess.repository.AnalyticsRepository;
 import com.microservices.kafka.avro.model.TwitterAnalyticsAvroModel;
+import com.microservices.transformer.AvroToDbEntityModelTransformer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.event.ApplicationStartedEvent;
@@ -27,16 +30,21 @@ public class AnalyticsKafkaConsumer implements KafkaConsumer<TwitterAnalyticsAvr
 
     private final KafkaConfigData kafkaConfig;
 
+    private final AvroToDbEntityModelTransformer avroToDbEntityModelTransformer;
 
+    private final AnalyticsRepository analyticsRepository;
 
 
     public AnalyticsKafkaConsumer(KafkaListenerEndpointRegistry registry,
                                   KafkaAdminClient adminClient,
-                                  KafkaConfigData config) {
+                                  KafkaConfigData config,
+                                  AvroToDbEntityModelTransformer transformer,
+                                  AnalyticsRepository repository) {
         this.kafkaListenerEndpointRegistry = registry;
         this.kafkaAdminClient = adminClient;
         this.kafkaConfig = config;
-
+        this.avroToDbEntityModelTransformer = transformer;
+        this.analyticsRepository = repository;
     }
 
     @EventListener
@@ -59,7 +67,9 @@ public class AnalyticsKafkaConsumer implements KafkaConsumer<TwitterAnalyticsAvr
                 partitions.toString(),
                 offsets.toString(),
                 Thread.currentThread().getId());
-
+        List<AnalyticsEntity> twitterAnalyticsEntities = avroToDbEntityModelTransformer.getEntityModel(messages);
+        analyticsRepository.batchPersist(twitterAnalyticsEntities);
+        LOG.info("{} number of messaged send to database", twitterAnalyticsEntities.size());
     }
 
 }
