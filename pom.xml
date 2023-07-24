@@ -25,6 +25,7 @@
 		<module>kafka-streams-service</module>
 		<module>mdc-interceptor</module>
 		<module>analytics-service</module>
+		<module>discovery-service</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -59,6 +60,7 @@
 		<openapi.ui.version>1.6.11</openapi.ui.version>
 		<postgresql.version>42.5.0</postgresql.version>
 		<kafka-streams-avro-serde.version>7.2.1</kafka-streams-avro-serde.version>
+		<spring-cloud.version>3.1.4</spring-cloud.version>
 
 	</properties>
 
@@ -245,6 +247,21 @@
 				<groupId>io.confluent</groupId>
 				<artifactId>kafka-streams-avro-serde</artifactId>
 				<version>${kafka-streams-avro-serde.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-gateway</artifactId>
+				<version>${spring-cloud.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+				<version>${spring-cloud.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+				<version>${spring-cloud.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.confluent</groupId>
