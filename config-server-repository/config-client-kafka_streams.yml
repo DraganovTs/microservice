@@ -4,9 +4,13 @@ kafka-streams-service:
 server:
   port: 8187
   servlet:
-    context-path: /kafka-streams-service
+    context-path: /
 
 spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
   security:
     oauth2:
       resourceserver:
@@ -47,3 +51,14 @@ kafka-streams-config:
   word-count-store-name: word-count-store
 
 
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure.include: health, prometheus
+      path-mapping.prometheus: metrics
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      cache.time-to-live: 1ms
