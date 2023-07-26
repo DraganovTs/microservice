@@ -7,26 +7,31 @@
 
 -- Started on 2022-09-23 16:35:34 CEST
 
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
 
 
 
--- SET statement_timeout = 0;
--- SET lock_timeout = 0;
--- SET idle_in_transaction_session_timeout = 0;
--- SET client_encoding = 'UTF8';
--- SET standard_conforming_strings = on;
--- SELECT pg_catalog.set_config('search_path', '', false);
--- SET check_function_bodies = false;
--- SET xmloption = content;
--- SET client_min_messages = warning;
--- SET row_security = off;
+\connect keycloak
 
-SHOW DATABASES LIKE 'keycloak';
-
-CREATE DATABASE keycloak;
-USE keycloak;
-
-
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
 
 --
 -- TOC entry 6 (class 2615 OID 16385)
@@ -36,7 +41,11 @@ USE keycloak;
 CREATE SCHEMA keycloak;
 
 
-ALTER DATABASE keycloak OWNER = 'postgres';
+ALTER SCHEMA keycloak OWNER TO postgres;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
 
 --
 -- TOC entry 210 (class 1259 OID 16386)
