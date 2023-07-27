@@ -15,9 +15,9 @@ spring:
   security:
     oauth2:
       resourceserver:
-  jwt:
-    issuer-uri: http://localhost:8890/auth/realms/microservice-realm
-    jwk-set-uri: http://localhost:8890/auth/realms/microservice-realm/protocol/openid-connect/certs\
+        jwt:
+          issuer-uri: http://localhost:9091/auth/realms/myrealm
+          jwk-set-uri: http://localhost:9091/auth/realms/myrealm/protocol/openid-connect/certs
   jpa:
     open-in-view: false
     show-sql: true
