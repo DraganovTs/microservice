@@ -73,15 +73,16 @@ spring:
     host: 127.0.0.1
     port: 6379
 
-
 management:
   endpoints:
     web:
       base-path: /actuator
-      exposure.include: health, gateway
+      exposure.include: health, prometheus, gateway
       path-mapping.prometheus: metrics
   endpoint:
     health:
       show-details: always
     prometheus:
       cache.time-to-live: 1ms
+    gateway:
+      enabled: true
