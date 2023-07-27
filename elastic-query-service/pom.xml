@@ -102,6 +102,7 @@
             <groupId>com.microservices</groupId>
             <artifactId>elastic-query-service-common</artifactId>
         </dependency>
+
     </dependencies>
 
 
