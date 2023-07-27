@@ -18,7 +18,6 @@ elastic-query-service:
     uri: "http://analytics-service/get-word-count-by-word/{word}"
     accept: ${elastic-query-service.webclient.accept-type}
 
-
 server:
   port: 8183
   servlet:
@@ -42,21 +41,21 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8890/auth/realms/microservice-realm
-          jwk-set-uri: http://localhost:8890/auth/realms/microservice-realm/protocol/openid-connect/certs\
+          issuer-uri: http://localhost:9091/auth/realms/myrealm
+          jwk-set-uri: http://localhost:9091/auth/realms/myrealm/protocol/openid-connect/certs
       client:
         registration:
           keycloak:
-            client-id: 'elastic-query-service'
-            client-secret: 'zuhcVCtmjXdbu8wH7Wj067jWJ2BZsEE2'
+            client-id: 'elastic-query-service-1'
+            client-secret: 'lggO2Rygd6P9DvxL3HNM6NfA27ubh7Jq'
             # instead of code flow (authorization_code like in the frontend services) we use client_Credentials that is used for machine to machine communication
             # In our case because we want to call kafka streams service and get aggregated word count result from kafka streams service without user interaction
-            # ,so we just need the client id and the client secret in client credentials flow
+            # so we just need the client id and the client secret in client credentials flow
             authorizationGrantType: client_credentials
         provider:
           keycloak:
             # We also set the token uri of keycloak to be able to obtain access token here
-            tokenUri: http://localhost:8890/realms/microservice-realm/protocol/openid-connect/token
+            tokenUri: http://localhost:9091/realms/microservices_realm/protocol/openid-connect/token
 
   sql:
     init:
@@ -68,17 +67,18 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL9Dialect
+
   datasource:
     url: jdbc:postgresql://localhost:5433/postgres?currentSchema=public&binaryTransfer=true&reWriteBatchedInserts=true
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
 
-
 user-config:
-  username: userTest
-  password: passwordTest
+  username: test
+  password: test1234
   roles: USER
+
 springdoc:
   api-docs:
     path: /api-docs
@@ -86,7 +86,7 @@ springdoc:
     path: /swagger-ui.html
 
 security:
-  paths-to-ignore: /api-docs
+  paths-to-ignore: /api-docs, /actuator/**
 
 management:
   endpoints:
