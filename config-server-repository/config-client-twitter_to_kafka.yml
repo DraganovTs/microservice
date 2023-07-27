@@ -1,7 +1,6 @@
 server:
   port: 8181
 
-
 twitter-to-kafka-service:
   twitter-keywords:
     - Java
@@ -52,5 +51,6 @@ kafka-producer-config:
   request-timeout-ms: 60000
   # Retry max 5 times in case of error
   retry-count: 5
+
 
 
