@@ -9,10 +9,11 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - "./data/db-keycloak.sql:/docker-entrypoint-initdb.d/db-keycloak.sql"
       - "postgres_storage_1:/var/lib/postgresql/data/"
+      - "./db-keycloak.sql:/docker-entrypoint-initdb.d/db-keycloak.sql"
+
     networks:
-      - ${GLOBAL_NETWORK:-services}
+      - ${GLOBAL_NETWORK:-db}
   postgres_db_elastic_query_service:
     image: postgres:${POSTGRES_VERSION:-latest}
     environment:
@@ -25,7 +26,12 @@ services:
       - "./data/db-elastic-query-service.sql:/docker-entrypoint-initdb.d/db-elastic-query-service.sql"
       - "postgres_storage_2:/var/lib/postgresql/data/"
     networks:
-      - ${GLOBAL_NETWORK:-services}
+      - ${GLOBAL_NETWORK:-db}
+
+networks:
+  db:
+    driver: bridge
+
 
 volumes:
   postgres_storage_1:
