@@ -64,7 +64,7 @@
 		<spring-cloud.version>3.1.4</spring-cloud.version>
 		<spring-cloud-starter-circuitbreaker-reactor-resilience4j.version>2.1.4</spring-cloud-starter-circuitbreaker-reactor-resilience4j.version>
 		<micrometer-registry-prometheus.version>1.9.4</micrometer-registry-prometheus.version>
-
+		<logstash-logback-encoder.version>7.2</logstash-logback-encoder.version>
 	</properties>
 
 	<repositories>
@@ -157,6 +157,11 @@
 			<dependency>
 				<groupId>com.microservices</groupId>
 				<artifactId>common-util</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservices</groupId>
+				<artifactId>mdc-interceptor</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
@@ -275,6 +280,11 @@
 				<groupId>io.micrometer</groupId>
 				<artifactId>micrometer-registry-prometheus</artifactId>
 				<version>${micrometer-registry-prometheus.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.logstash.logback</groupId>
+				<artifactId>logstash-logback-encoder</artifactId>
+				<version>${logstash-logback-encoder.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.confluent</groupId>

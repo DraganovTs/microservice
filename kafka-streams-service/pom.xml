@@ -86,6 +86,10 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.microservices</groupId>
+            <artifactId>mdc-interceptor</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
