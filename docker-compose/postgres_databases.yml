@@ -5,12 +5,13 @@ services:
     environment:
       - "POSTGRES_USER=postgres"
       - "POSTGRES_PASSWORD=postgres"
-      - "POSTGRES_DB=keycloak"
+      - "POSTGRES_DB=keycloakk"
+      - "POSTGRES_INITDB_WALDIR=/docker-entrypoint-initdb.d"
     ports:
       - '5432:5432'
     volumes:
       - "postgres_storage_1:/var/lib/postgresql/data/"
-      - "./db-keycloak.sql:/docker-entrypoint-initdb.d/db-keycloak.sql"
+      - "./init-scripts:/docker-entrypoint-initdb.d"
 
     networks:
       - ${GLOBAL_NETWORK:-db}
