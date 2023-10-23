@@ -1,6 +1,6 @@
 ![generalArchitecture](https://github.com/DraganovTs/microservice/assets/104751714/11418523-6549-42a4-a653-47824c595f7d)
 
-**Services**[](https://github.com/DraganovTs/microservice#services)
+**Services**        [🔗&#xFE0E;](https://github.com/DraganovTs/microservice#services)
 
 - **Config-server:** Spring-cloud-config, retrieves the configs in config-server-repository and each service uses them.
 
@@ -56,7 +56,8 @@ We used Resilience4j defining a filter named CircuitBreaker inside the gateway a
 
 **Note:** We use spring sleuth to send trance/ span data from different services to kafka, after zipkin consumes directly to kafka for distributed tracing and persist everything in a MySQL db. We could have sent from each service through HTTP to zipkin, but with the first implementation, we have decoupled.
 
-**Modules**[](https://github.com/DraganovTs/microservice#modules)
+**Modules**[🔗&#xFE0E;](https://github.com/DraganovTs/microservice#modules)
+
 **App-config-data:** Objects representing the configs retrieved from spring-cloud-config.
 
 **Common config:** common configs.
@@ -78,7 +79,7 @@ Kafka-admin: Create and verify Kafka topics programmatically.
 **Kafka-producer:** Use spring-kafka to write Kafka producer implementation.
 **Kafka-consumer:** Use spring-kafka to write Kafka consumer implementation.
 
-**HOW TO RUN IT**[](https://github.com/DraganovTs/microservice#how-to-run-it)
+**HOW TO RUN IT**[🔗&#xFE0E;](https://github.com/DraganovTs/microservice#how-to-run-it)
 Launch docker.
 
 From the root folder to create the docker images type in the terminal:
